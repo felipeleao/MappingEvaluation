@@ -1,0 +1,31 @@
+
+
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+
+.panel{
+  margin: 0px;
+}
+
+.btn{
+  margin: 20px;
+  min-width: 250px;
+}
+
+
+@media (min-width: 768px){
+  .dl-horizontal dt {
+    float: left;
+    width: 80px;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .dl-horizontal dd {
+    margin-left: 100px;
+  }
+}
