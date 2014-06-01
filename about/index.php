@@ -9,61 +9,27 @@
 
         <h1 class="page-header">About the Research</h1>
 
-        <div class="alert alert-info">
-          <p>First of all, <strong>THANK YOU! =)</strong></p>
-          <p>Your help is essential for the success of this work, and we're no just saying it! If you wish to understand a little bit better what this research aims to achieve and how it can impact on computational linguistics and conceptual modelling fields, please refer to the <a href="<?= APPLICATION_ROOT ?>/about">about section</a>.</p>
-        </div>
+        <p>The <strong>Mapping Evaluation</strong> intends to pose as a helper application on the evaluation step of the case study being currently conducted as a part of my Master's Research in Information Systems, being developed at <a href="http://www.unirio.br/">UNIRIO</a> (Federal University of the State of Rio de Janeiro). The main goal is to propose an automatic method to learn well-founded conceptual models through Natural Language Processing (NLP). A big part of this method is the mapping of WordNet synsets (along with their correspondent Supersenses) to Semantic Types.</p>
+        <p>Out of the context of this research the mapping can be really useful by itself, since it expands the semantics of Wordnet. Considering the amount of projects around the world that use WordNet as a lexical/semantical database, we believe that many other researches can benefit from the relation of synsets to Semantic Types, which expose some attributes not currently available on WordNet.</p>
 
-        <p>When you click on the <strong>Begin Evaluation</strong> button in the end of this page you'll be redirected to the <em>evaluate</em> section of this application. Once the evaluation begins you'll be able to interrupt it at any time you wish without losing the work done up to that point. When you log back with your username the system will take you to the point where you have stopped.</p>
-        <p>We have conducted an automatic mapping of <a href="http://wordnet.princeton.edu/">Wordnet</a> synsets to Semantic Types. This evaluation aims at gathering information about how correct the mapping rules applied are, and this is where you can help! Once at a time we'll show you <em>synset</em> and the correspondent Semantic Type our mapping have related to it. Your job is to tell us if the given synset can be seen as a subtype of the given Semantic Type.</p>
-        <p>A <strong>synset</strong> is the name given to a <em>"Synonym Set"</em>, which is simply a set of words that on a given context have the same meaning (synonyms), This meaning is also referred to as the <em>"gloss"</em>. An example of a simple synset is given below.</p>
+        <h2 class="page-header">WordNet</h2>
+
+        <p><a href="http://wordnet.princeton.edu/">WordNet</a> is a large lexical database originally developed for the english language at Princeton University. Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept. Synsets are interlinked by means of conceptual-semantic and lexical relations. Such structure makes it a useful tool for computational linguistics and natural language processing.</p>
+        <p>WordNet superficially resembles a thesaurus, in that it groups words together based on their meanings. However, there are some important distinctions. First, WordNet interlinks not just word forms—strings of letters—but specific senses of words. As a result, words that are found in close proximity to one another in the network are semantically disambiguated. Second, WordNet labels the semantic relations among words, whereas the groupings of words in a thesaurus does not follow any explicit pattern other than meaning similarity.</p>
+        <p>An online version of Princeton's WordNet is <a href="http://wordnetweb.princeton.edu/perl/webwn">publicly available</a>. If you wish to check similar projects for other languages  refer to <a href="http://globalwordnet.org/">globalwordnet.org</a>.</p>
+
+        <h2 class="page-header">Semantic Types</h2>
+
+        <p></p>
+
+        <h2 class="page-header">About the author</h2>
+
+        <p>This project is being developed by <a href="http://www.fleao.com.br">Felipe Leão</a> (me) under the advisoring of professors Kate Revoredo and Fernanda Baião as a step of the research related to the development of a Master's thesis in Information Systems. For more informations about the research and publications related to it go to my <a href="http://www.fleao.com.br/publications">publications</a> section.</p>
 
 
-        <div class="panel panel-warning bigger-margin">
-          <div class="panel-heading">
-            <h3 class="panel-title"><strong>Wordnet Synset</strong></h3>
-          </div>
-          <div class="panel-body">
-            <dl class="dl-horizontal">
-              <dt>Words:</dt>
-              <dd>car, auto, automobile, machine, motorcar</dd>
-              <dt>Gloss:</dt>
-              <dd>a motor vehicle with four wheels; usually propelled by an internal combustion engine. "he needs a car to get to work".</dd>
-            </dl>
-          </div>
-        </div>
 
-        <p>The <strong>Words</strong> section gives the different words that can be used as synonyms for the specified meaning. The <strong>Gloss</strong> part gives the definition of that meaning, and sometimes a example of a sentence where one of the words related to that meaning can be used (inside quotation marks).</p>
-        <p>On the other hand <strong>Semantic Types</strong> are meta classes responsible for grouping words by general meanings. Each Semantic Type describe a meaning that can be assumed by nouns or verbs. In this work we are dealing exclusively with Noun Semantic Types, and consequently only noun synsets. An example of  the Semantic Type that would be related to the "car" synset given above is <em>Artefact</em>, which is decribed below.</p>
 
-        <div class="panel panel-success bigger-margin">
-          <div class="panel-heading">
-            <h3 class="panel-title"><strong>Semantic Type</strong></h3>
-          </div>
-          <div class="panel-body">
-            <dl class="dl-horizontal">
-              <dt>Name:</dt>
-              <dd>Artefact</dd>
-              <dt>Definition:</dt>
-              <dd>Metaclasse cujas metapropriedades determinam classes de coisas fabricadas pelo homem, ou seja, que não existem na natureza.</dd>
-            </dl>
-          </div>
-        </div>
-
-        <p>Sometimes more than one Semantic type will be related to the synset. When this happens you have to evaluate the mapping as a whole, meaning that you must observe if indeed both Semantic Types can be related to the synset. Once Synset and Semantic Type are analyzed please tell us if the mapping is correct or wrong by clicking on the correpondent button. Once clicked, your answer will be saved and a new mapping will be shown for you to evaluate.</p>
-        <p>Please, click the button below to begin.</p>
-
-        <div class="text-center">
-          <button type="button" class="btn btn-success btn-lg">
-            <span class="glyphicon glyphicon-play"></span>&nbsp;&nbsp;&nbsp;Begin Evaluation
-          </button>
-        </div>
-
-        <div class="bs-callout bs-callout-danger">
-          <h4 class="text-danger"><strong>We won't be able to use partial answers!</strong></h4>
-          <p>Please, understand that we won't be able to use partial answers, so your participation will only be useful to us if you evaluate all the mappings shown. if you have ever conducted an academic research we are sure you can understand how difficult is to find people willing to help, so...</p>
-          <p><strong>Thank you very much in advance! :)</strong></p>
-        </div>
+      </div>
 
 
 

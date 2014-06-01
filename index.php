@@ -61,8 +61,8 @@
 
         <div class="bs-callout bs-callout-danger">
           <h4 class="text-danger"><strong>We won't be able to use partial answers!</strong></h4>
-          <p>Please, understand that we won't be able to use partial answers, so your participation will only be useful to us if you evaluate all the mappings shown. if you have ever conducted an academic research we are sure you can understand how difficult is to find people willing to help, so...</p>
-          <p><strong>Thank you very much in advance! :)</strong></p>
+          <p>Please, understand that we won't be able to use partial answers, so your participation will only be useful to us if you evaluate all the mappings shown. If you have ever conducted an academic research, you can understand how difficult it is to find specialists and that they are not allways willing to help, so...</p>
+          <p><strong>Thank you very much in advance!&nbsp;&nbsp;&nbsp;:)</strong></p>
         </div>
 
 
