@@ -52,11 +52,11 @@
             <?
               if(isset($_SESSION['usuarioNome'])){
             ?>
-              <li><a href="<?= APPLICATION_ROOT; ?>/logout">Logout</a></li>
+              <li><a href="<?= APPLICATION_ROOT; ?>/logout">Logout</span></a></li>
             <?
               }else{
             ?>
-            <li><a href="<?= APPLICATION_ROOT; ?>/login">Login</a></li>
+            <li><a href="<?= APPLICATION_ROOT; ?>/login">Login</span></a></li>
             <?
               }
             ?>
@@ -70,6 +70,10 @@
 
       <?
         if(isset($_SESSION['usuarioNome'])){
-          echo "<p class=\"text-right\">Hello <strong>".$_SESSION['usuarioNome']."</strong></p>";
+      ?>
+          <div class="text-right user-info ">
+            <p class="text-muted"></span>Logged as <strong><?= $_SESSION['usuarioNome'];?></strong></p>
+          </div>
+      <?
         }
       ?>

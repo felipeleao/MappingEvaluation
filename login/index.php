@@ -5,7 +5,8 @@
   $referrer = $_SERVER['REQUEST_URI'];
   if (SITE_URL.$referrer == APPLICATION_ROOT.'/logout/') {
     include("./security.php"); // includes the security methods
-    expelsVisitor();
+    expelVisitor();
+
   }
 
   include_once("../template/header.tpl.php");
@@ -18,7 +19,7 @@
     <h2 class="form-signin-heading">Please sign in</h2>
     <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
     <input type="password" name="password" class="form-control" placeholder="Password" required>
-    <button class="btn btn-sm btn-primary btn-block" type="submit">Sign in</button>
+    <button class="btn btn-sm btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;&nbsp;Sign in</button>
   </form>
 
 

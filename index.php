@@ -46,7 +46,7 @@
               <dt>Name:</dt>
               <dd>Artefact</dd>
               <dt>Definition:</dt>
-              <dd>Metaclasse cujas metapropriedades determinam classes de coisas fabricadas pelo homem, ou seja, que não existem na natureza.</dd>
+              <dd>Metaclass which metaproperties determine classes of thinks made by humans, i.e. not existing on nature.</dd>
             </dl>
           </div>
         </div>
@@ -55,9 +55,9 @@
         <p>Please, click the button below to begin.</p>
 
         <div class="text-center">
-          <button type="button" class="btn btn-success btn-lg">
+          <a class="btn btn-success btn-lg" href="<?= APPLICATION_ROOT; ?>/evaluate">
             <span class="glyphicon glyphicon-play"></span>&nbsp;&nbsp;&nbsp;Begin Evaluation
-          </button>
+          </a>
         </div>
 
         <div class="bs-callout bs-callout-danger">

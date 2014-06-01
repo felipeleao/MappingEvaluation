@@ -109,14 +109,14 @@
 
     if (!isset($_SESSION['usuarioID']) OR !isset($_SESSION['usuarioNome'])) {
       // Não há usuário logado, manda pra página de login
-      expelsVisitor();
+      expelVisitor();
     } else if (!isset($_SESSION['usuarioID']) OR !isset($_SESSION['usuarioNome'])) {
       // Há usuário logado, verifica se precisa validar o login novamente
       if ($_SG['validaSempre'] == true) {
         // Verifica se os dados salvos na sessão batem com os dados do banco de dados
         if (!validateUsuario($_SESSION['usuarioLogin'], $_SESSION['usuarioSenha'])) {
         // Os dados não batem, manda pra tela de login
-        expelsVisitor();
+        expelVisitor();
         }
       }
     }
@@ -125,7 +125,7 @@
   /**
   * Função para expulsar um visitante
   */
-  function expelsVisitor() {
+  function expelVisitor() {
     global $_SG;
 
     // Remove as variáveis da sessão (caso elas existam)

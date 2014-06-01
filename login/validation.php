@@ -8,7 +8,7 @@
   // icludes the file with the security system
   include_once("../config/constants.php");
   include_once("../login/security.php");
-  
+
   // checks if a form has been posted
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -25,7 +25,7 @@
 
     } else {
       // User and/or password does not check, send back to login page
-      expelsVisitor();
+      expelVisitor();
     }
 
   }
