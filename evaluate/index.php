@@ -11,7 +11,7 @@
 
       <div class="row extra-margin">
         <div class="col-md-12">
-          <h2><span class="glyphicon glyphicon-asterisk"></span> Is the <strong>Synset</strong> a subtype of the <strong>Semantic Type</strong>?</h2>
+          <h2 class="less-margin"><span class="glyphicon glyphicon-asterisk"></span> Is the <strong>Synset</strong> a subtype of the <strong>Semantic Type</strong>?</h2>
         </div>
       </div>
       <div class="row">

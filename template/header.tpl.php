@@ -67,3 +67,9 @@
 
 
     <div class="container">
+
+      <?
+        if(isset($_SESSION['usuarioNome'])){
+          echo "<p class=\"text-right\">Hello <strong>".$_SESSION['usuarioNome']."</strong></p>";
+        }
+      ?>

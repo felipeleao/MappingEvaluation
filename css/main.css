@@ -14,7 +14,7 @@ html, body {
 }
 
 .navbar-static-top {
-  margin-bottom: 19px;
+  margin-bottom: 0px;
 }
 
 .panel{
@@ -41,6 +41,10 @@ html, body {
 
 .extra-margin{
   margin: 30px 0px;
+}
+
+.less-margin{
+  margin-top: 0px;
 }
 
 
