@@ -29,7 +29,7 @@
         <p>This project is being developed by <a href="http://www.fleao.com.br">Felipe Leão</a> (me) under the advisoring of professors Kate Revoredo and Fernanda Baião as a step of the research related to the development of a Master's thesis in Information Systems at UNIRIO. For more informations about the research and publications related to it go to my <a href="http://www.fleao.com.br/publications">publications</a> section.</p>
 
 
-
+        <p class="text-center"><img src="<?= IMAGES_ROOT ?>/LogoMedium.png" /></p>
 
       </div>
 
