@@ -46,9 +46,9 @@
             <li><a href="http://www.fleao.com.br">by Felipe Leão</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-          <li><a href="<?= APPLICATION_ROOT; ?>/instructions">Instructions</a></li>
-            <li class="active"><a href="<?= APPLICATION_ROOT; ?>/evaluate">Evaluate!</a></li>
-              <li><a href="<?= APPLICATION_ROOT; ?>/about">About the Research</a></li>
+            <li><a href="<?= APPLICATION_ROOT; ?>">Instructions</a></li>
+            <li><a href="<?= APPLICATION_ROOT; ?>/evaluate">Evaluate!</a></li>
+            <li><a href="<?= APPLICATION_ROOT; ?>/about">About the Research</a></li>
             <li><a href="<?= APPLICATION_ROOT; ?>/logout">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
