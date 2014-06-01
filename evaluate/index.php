@@ -1,5 +1,9 @@
 <?php
   include_once("../config/constants.php");
+  include_once("../login/security.php");
+
+  protectPage(); // Chama a função que protege a página
+
   include_once("../template/header.tpl.php");
 ?>
 

@@ -49,7 +49,17 @@
             <li><a href="<?= APPLICATION_ROOT; ?>">Instructions</a></li>
             <li><a href="<?= APPLICATION_ROOT; ?>/evaluate">Evaluate!</a></li>
             <li><a href="<?= APPLICATION_ROOT; ?>/about">About the Research</a></li>
-            <li><a href="<?= APPLICATION_ROOT; ?>/logout">Logout</a></li>
+            <?
+              if(isset($_SESSION['usuarioNome'])){
+            ?>
+              <li><a href="<?= APPLICATION_ROOT; ?>/logout">Logout</a></li>
+            <?
+              }else{
+            ?>
+            <li><a href="<?= APPLICATION_ROOT; ?>/login">Login</a></li>
+            <?
+              }
+            ?>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
