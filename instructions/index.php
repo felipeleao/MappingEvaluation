@@ -1,6 +1,6 @@
 <?php
-  include_once("./config/constants.php");
-  include_once("./template/header.tpl.php");
+  include_once("../config/constants.php");
+  include_once("../template/header.tpl.php");
 ?>
 
 
@@ -67,4 +67,4 @@
       </div>
 
 
-<?php include_once("./template/footer.tpl.php"); ?>
+<?php include_once("../template/footer.tpl.php"); ?>
