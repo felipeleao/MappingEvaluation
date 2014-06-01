@@ -1,13 +1,13 @@
 <?php
-  include_once("../config/constants.php");
-  include_once("../template/header.tpl.php");
+  include_once("./config/constants.php");
+  include_once("./template/header.tpl.php");
 ?>
 
 
 
       <div class="section">
 
-        <h1 class="page-header">About the Research</h1>
+        <h1 class="page-header">Instructions</h1>
 
         <div class="alert alert-info">
           <p>First of all, <strong>THANK YOU! =)</strong></p>
@@ -73,4 +73,4 @@
       </div>
 
 
-<?php include_once("../template/footer.tpl.php"); ?>
+<?php include_once("./template/footer.tpl.php"); ?>

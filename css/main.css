@@ -26,6 +26,18 @@ html, body {
   min-width: 250px;
 }
 
+.bs-callout {
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 3px solid #eee;
+}
+
+.bs-callout-danger {
+  background-color: #fdf7f7;
+  border-color: #d9534f;
+}
+
+
 
 .extra-margin{
   margin: 30px 0px;
@@ -36,6 +48,16 @@ html, body {
   padding-bottom: 9.5px;
   margin: 42px 0 21px;
   border-bottom: 1px solid #dddddd;
+}
+
+.alert{
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 30px;
+}
+
+.clearfix{
+  height: 100px;
 }
 
 
@@ -54,5 +76,16 @@ html, body {
   .dl-horizontal dd {
     margin-left: 100px;
     margin-bottom: 10px;
+  }
+
+  .bigger-margin{
+    margin: 20px 100px;
+  }
+}
+
+
+@media (min-width:992px){
+  .bigger-margin{
+    margin: 30px 200px;
   }
 }
