@@ -3,11 +3,12 @@ CREATE TABLE `users` (
   `login` VARCHAR(45) NOT NULL,
   `user` VARCHAR(255) NOT NULL,
   `password` VARCHAR(255),
+  `last_evaluated` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `login_UNIQUE` (`login` ASC));
 CREATE TABLE `evaluation` (
   `id_user` INT NOT NULL,
-  `id_synset` VARCHAR(255) NOT NULL,
+  `id_synset` int NOT NULL,
   `correct` TINYINT(1) NOT NULL,
   PRIMARY KEY (`id_user`, `id_synset`),
   INDEX `fk_evaluation_synsets_idx` (`id_synset` ASC),
@@ -21,3 +22,4 @@ CREATE TABLE `evaluation` (
     REFERENCES `mapping_evaluation`.`synsets` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE);
+INSERT INTO `users`(`login`, `user`, `password`) VALUES ('felipe','Felipe Leao','1234');

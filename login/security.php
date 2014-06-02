@@ -17,23 +17,22 @@
 
   //  Configurações do Script
   // ==============================
-  $_SG['conectaServidor'] = true;        // Abre uma conexão com o servidor MySQL?
-  $_SG['abreSessao'] = true;             // Inicia a sessão com um session_start()?
 
-  $_SG['caseSensitive'] = false;         // Usar case-sensitive? Onde 'thiago' é diferente de 'THIAGO'
+  $_SG['conectaServidor'] = CONNECT_TO_SERVER;      // Abre uma conexão com o servidor MySQL?
+  $_SG['abreSessao'] = OPEN_SESSION;                // Inicia a sessão com um session_start()?
+  $_SG['caseSensitive'] = CASE_SENSITIVE;           // Usar case-sensitive? Onde 'thiago' é diferente de 'THIAGO'
+  $_SG['validaSempre'] = VALIDATE_EVERYTIME;        // Deseja validar o usuário e a senha a cada carregamento de página?
 
-  $_SG['validaSempre'] = true;           // Deseja validar o usuário e a senha a cada carregamento de página?
-  // Evita que, ao mudar os dados do usuário no banco de dado o mesmo contiue logado.
 
-  $_SG['servidor'] = 'localhost:3306';        // Servidor MySQL
-  $_SG['usuario'] = 'root';              // Usuário MySQL
-  $_SG['senha'] = '';                    // Senha MySQL
-  $_SG['banco'] = 'mapping_evaluation';  // Banco de dados MySQL
-
-  $_SG['paginaLogin'] = APPLICATION_ROOT.'/login';     // Página de login
-
-  $_SG['tabela'] = 'users';             // Nome da tabela onde os usuários são salvos
+  $_SG['servidor'] = SGBD_SERVER.":".SGBD_PORT;     // Servidor MySQL
+  $_SG['usuario'] = SGBD_USER;                      // Usuário MySQL
+  $_SG['senha'] = SGBD_PASSWORD;                    // Senha MySQL
+  $_SG['banco'] = SGBD_SCHEMA;                      // Banco de dados MySQL
+  $_SG['paginaLogin'] = LOGIN_PAGE;                 // Página de login
+  $_SG['tabela'] = USERS_DB_TABLE;                  // Nome da tabela onde os usuários são salvos
   // ==============================
+
+
 
   // ======================================
   //   ~ Não edite a partir deste ponto ~
@@ -81,6 +80,7 @@
     // Verifica se encontrou algum registro
     if (empty($resultado)) {
       // Nenhum registro foi encontrado => o usuário é inválido
+      mysql_free_result($query);
       return false;
 
     } else {
@@ -88,7 +88,8 @@
 
       // Definimos dois valores na sessão com os dados do usuário
       $_SESSION['usuarioID'] = $resultado['id']; // Pega o valor da coluna 'id do registro encontrado no MySQL
-      $_SESSION['usuarioNome'] = $resultado['user']; // Pega o valor da coluna 'nome' do registro encontrado no MySQL
+      $_SESSION['usuarioLogin'] = $resultado['user']; // Pega o valor da coluna 'nome' do registro encontrado no MySQL
+      $_SESSION['usuarioNome'] = $resultado['login']; // Pega o valor da coluna 'login' do registro encontrado no MySQL
 
       // Verifica a opção se sempre validar o login
       if ($_SG['validaSempre'] == true) {
@@ -97,6 +98,7 @@
         $_SESSION['usuarioSenha'] = $senha;
       }
 
+      mysql_free_result($query);
       return true;
     }
   }

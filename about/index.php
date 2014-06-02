@@ -42,4 +42,7 @@
       </div>
 
 
-<?php include_once("../template/footer.tpl.php"); ?>
+<?php
+    include_once("../template/commonjs.tpl.php");
+    include_once("../template/footer.tpl.php");
+?>

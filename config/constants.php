@@ -1,13 +1,29 @@
 <?php
 
 
-
+//General parameters fused throughout the application
 define("SITE_URL", siteURL() );
 define("APPLICATION_ROOT", getApplicationRoot() );
 define("IMAGES_ROOT", APPLICATION_ROOT."/images");
 define("CSS_ROOT", APPLICATION_ROOT."/css");
 define("JS_ROOT", APPLICATION_ROOT."/js");
 
+
+//Access restriction parameters
+define("CONNECT_TO_SERVER", true);
+define("OPEN_SESSION", true);
+define("CASE_SENSITIVE", false);
+define("VALIDATE_EVERYTIME", true);
+define("LOGIN_PAGE", APPLICATION_ROOT."/login");
+define("USERS_DB_TABLE", "users");
+
+
+//Database connection cparameters and credentials
+define("SGBD_SERVER", "localhost");
+define("SGBD_PORT", "3306");
+define("SGBD_USER", "root");
+define("SGBD_PASSWORD", "");
+define("SGBD_SCHEMA", "mapping_evaluation");
 
 
 

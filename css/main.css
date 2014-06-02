@@ -41,6 +41,10 @@ html, body {
   border-color: #d9534f;
 }
 
+.jumbotron{
+    margin-top: 50px;
+}
+
 .user-info{
   padding: 5px;
   padding-right:0px;
