@@ -75,6 +75,6 @@
 
 
 <?php
-    include_once("../template/commonjs.tpl.php");
-    include_once("../template/footer.tpl.php");
+    include_once("./template/commonjs.tpl.php");
+    include_once("./template/footer.tpl.php");
 ?>

@@ -32,13 +32,17 @@
     //======================================================================
     //Retrieve the total of mappings that must be conducted (simply the number of synsets)
     //======================================================================
-    $sql_semtypes = "select * from semantic_types st ".
+    $sql_semtypes = "select st.name as 'name', st.definition as 'definition' from semantic_types st ".
                     "inner join synset_has_semtype sst on st.id = sst.id_semtype ".
                     "inner join synsets s on s.id = sst.id_synset WHERE s.id = ".$result_synset[id].";";
 
     $query_semtypes = mysql_query($sql_semtypes);
-    $result_semtypes = mysql_fetch_assoc($query_semtypes);
 
+    //build an array with all semantic types related to the synset
+    $semtypes_array = array();
+    while ($row = mysql_fetch_assoc($query_semtypes)) {
+        $semtypes_array[$row[name]] = $row[definition];
+    }
 
 
 
@@ -46,18 +50,23 @@
     // Build array that will be ocnverted into JSON
     //======================================================================
 
-    $arr = array (
+    $num_result_synset = mysql_num_rows($query_synset);
+    if($num_result_synset > 0){
+        $is_evaluation_over = false;
+    }else{
+        $is_evaluation_over = true;
+    }
+
+
+    $arr = array(
             'synset'=>array(
                         'words'=>$result_synset[words],
                         'gloss'=>$result_synset[gloss]
                     ),
-            'semtypes'=>array(
-                        'Animate'=>'Definition for Animate semantic type',
-                        'Human'=>'Another definition to be used for the second semantic type.'
-                    ),
+            'semtypes'=>$semtypes_array,
             'synsetsEvaluated'=>$result_synset[id]-1,
             'totalSynsets'=>$result_total[total],
-            'noMoreEvaluations'=>false);
+            'noMoreEvaluations'=>$is_evaluation_over);
 
     //outputs the array as JSON
     echo json_encode($arr);
@@ -67,8 +76,8 @@
     // If a connection was successfully open, close it
     //======================================================================
 
-    if(isset($connection)){
-      mysql_close($connection);
-    }
+    //if(isset($connection)){
+    //  mysql_close($connection);
+    //}
 
 ?>

@@ -17,19 +17,20 @@
 
   //  Configurações do Script
   // ==============================
-
   $_SG['conectaServidor'] = CONNECT_TO_SERVER;      // Abre uma conexão com o servidor MySQL?
   $_SG['abreSessao'] = OPEN_SESSION;                // Inicia a sessão com um session_start()?
   $_SG['caseSensitive'] = CASE_SENSITIVE;           // Usar case-sensitive? Onde 'thiago' é diferente de 'THIAGO'
   $_SG['validaSempre'] = VALIDATE_EVERYTIME;        // Deseja validar o usuário e a senha a cada carregamento de página?
 
-
+  // Evita que, ao mudar os dados do usuário no banco de dado o mesmo contiue logado.
   $_SG['servidor'] = SGBD_SERVER.":".SGBD_PORT;     // Servidor MySQL
   $_SG['usuario'] = SGBD_USER;                      // Usuário MySQL
   $_SG['senha'] = SGBD_PASSWORD;                    // Senha MySQL
   $_SG['banco'] = SGBD_SCHEMA;                      // Banco de dados MySQL
   $_SG['paginaLogin'] = LOGIN_PAGE;                 // Página de login
   $_SG['tabela'] = USERS_DB_TABLE;                  // Nome da tabela onde os usuários são salvos
+
+
   // ==============================
 
 
@@ -88,8 +89,7 @@
 
       // Definimos dois valores na sessão com os dados do usuário
       $_SESSION['usuarioID'] = $resultado['id']; // Pega o valor da coluna 'id do registro encontrado no MySQL
-      $_SESSION['usuarioLogin'] = $resultado['user']; // Pega o valor da coluna 'nome' do registro encontrado no MySQL
-      $_SESSION['usuarioNome'] = $resultado['login']; // Pega o valor da coluna 'login' do registro encontrado no MySQL
+      $_SESSION['usuarioNome'] = $resultado['user']; // Pega o valor da coluna 'nome' do registro encontrado no MySQL
 
       // Verifica a opção se sempre validar o login
       if ($_SG['validaSempre'] == true) {
@@ -112,11 +112,11 @@
     if (!isset($_SESSION['usuarioID']) OR !isset($_SESSION['usuarioNome'])) {
       // Não há usuário logado, manda pra página de login
       expelVisitor();
-    } else if (!isset($_SESSION['usuarioID']) OR !isset($_SESSION['usuarioNome'])) {
+    } else if (isset($_SESSION['usuarioID']) OR isset($_SESSION['usuarioNome'])) {
       // Há usuário logado, verifica se precisa validar o login novamente
       if ($_SG['validaSempre'] == true) {
         // Verifica se os dados salvos na sessão batem com os dados do banco de dados
-        if (!validateUsuario($_SESSION['usuarioLogin'], $_SESSION['usuarioSenha'])) {
+        if (!validateUser($_SESSION['usuarioLogin'], $_SESSION['usuarioSenha'])) {
         // Os dados não batem, manda pra tela de login
         expelVisitor();
         }

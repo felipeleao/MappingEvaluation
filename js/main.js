@@ -46,7 +46,7 @@ function loadMapping(){
                 $('#semantic_type > .panel-body > .content').html(semtypes.slice(0,-5));
             }
             //Update progressbar
-            var percentage = (Math.floor((data.synsetsEvaluated / data.totalSynsets)*1000))/10;
+            var percentage = (Math.floor((data.synsetsEvaluated / data.totalSynsets)*10000))/100;
             $('#evaluated').html(data.synsetsEvaluated);
             $('#totalSynsets').html(data.totalSynsets);
             $('#percentage').html(percentage+"%");
