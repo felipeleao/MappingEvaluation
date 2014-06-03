@@ -36,7 +36,7 @@
     //======================================================================
     //count evaluated synsets
     //======================================================================
-    $sql_total_evaluated = "select count(*) as 'total' from evaluation e  group by e.id_synset;";
+    $sql_total_evaluated = "select count(*) as 'total' from (select * from evaluation e group by e.id_synset) as allregisters;";
 
     $query_total_evaluated = mysql_query($sql_total_evaluated);
     $result_total_evaluated = mysql_fetch_assoc($query_total_evaluated);
