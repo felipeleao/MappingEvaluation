@@ -1,44 +1,49 @@
 
 html, body {
-  margin: none;
-  padding: none;
-  width: 100%;
-  overflow-x: hidden !important;
+    margin: none;
+    padding: none;
+    width: 100%;
+    overflow-x: hidden !important;
 }
 
 
 .container{
-  height:100%;
-  padding: 0;
-  padding: 0px 10px;
+    height:100%;
+    padding: 0;
+    padding: 0px 10px;
 }
 
 .navbar-static-top {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .panel{
-  margin: 10px;
+    margin: 10px;
 }
 
 .btn{
-  margin: 24px;
-  min-width: 250px;
+    margin: 24px;
+    min-width: 250px;
+}
+
+.btn-modal{
+    margin:0px;
+    min-width: 100px;
 }
 
 .well{
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .bs-callout {
-  margin: 20px 0;
-  padding: 20px;
-  border-left: 3px solid #eee;
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 3px solid #eee;
 }
 
 .bs-callout-danger {
-  background-color: #fdf7f7;
-  border-color: #d9534f;
+    background-color: #fdf7f7;
+    border-color: #d9534f;
 }
 
 .jumbotron{
@@ -46,39 +51,39 @@ html, body {
 }
 
 .user-info{
-  padding: 5px;
-  padding-right:0px;
-  float: right;
+    padding: 5px;
+    padding-right:0px;
+    float: right;
 }
 
 .extra-margin{
-  margin: 10px 0px;
+    margin: 10px 0px;
 }
 
 .less-margin{
-  margin-top: 0px;
+    margin-top: 0px;
 }
 
 
 .page-header {
-  padding-bottom: 9.5px;
-  margin: 42px 0 21px;
-  border-bottom: 1px solid #dddddd;
+    padding-bottom: 9.5px;
+    margin: 42px 0 21px;
+    border-bottom: 1px solid #dddddd;
 }
 
 .alert{
-  font-size: inherit;
-  font-weight: inherit;
-  margin: 30px;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 30px;
 }
 
 .clearfix{
-  height: 100px;
+    height: 100px;
 }
 
 
 @media (min-width: 768px){
-  .dl-horizontal dt {
+    .dl-horizontal dt {
     float: left;
     width: 90px;
     clear: left;
@@ -87,21 +92,27 @@ html, body {
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-bottom: 10px;
-  }
+}
 
-  .dl-horizontal dd {
+.dl-horizontal dd {
     margin-left: 100px;
     margin-bottom: 10px;
-  }
+}
 
-  .bigger-margin{
+.bigger-margin{
     margin: 20px 100px;
-  }
+}
+
+    .modal-dialog {
+        width: 600px;
+        margin: 200px auto;
+    }
+
 }
 
 
 @media (min-width:992px){
-  .bigger-margin{
-    margin: 30px 200px;
-  }
+    .bigger-margin{
+        margin: 30px 200px;
+    }
 }

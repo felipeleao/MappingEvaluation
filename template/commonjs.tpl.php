@@ -9,5 +9,6 @@
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="<?= JS_ROOT; ?>/bootstrap.min.js"></script>
+        <script src="<?= JS_ROOT; ?>/messages.js"></script>
         <script src="<?= JS_ROOT; ?>/navbar.js"></script>
         <script src="<?= JS_ROOT; ?>/main.js"></script>

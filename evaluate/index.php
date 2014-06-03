@@ -23,6 +23,7 @@
                 <div class="panel-body">
                   <dl class="dl-horizontal content">
                     <!-- here goes the synsets -->
+                    <p class="text-center"><strong>Loading...</strong></p>
                   </dl>
                 </div>
               </div>
@@ -35,6 +36,7 @@
                 <div class="panel-body">
                   <dl class="dl-horizontal content">
                     <!-- here goes the semantic types -->
+                    <p class="text-center"><strong>Loading...</strong></p>
                   </dl>
                 </div>
               </div>
@@ -42,10 +44,10 @@
         </div>
         <div class="row text-center extra-margin">
             <div class="col-md-12">
-                <button type="button" class="btn btn-danger">
+                <button type="button" class="btn btn-danger" id="btn_wrong">
                   <span class="glyphicon glyphicon-remove"></span> Wrong
                 </button>
-                <button type="button" class="btn btn-success">
+                <button type="button" class="btn btn-success" id="btn_correct">
                   <span class="glyphicon glyphicon-ok"></span> Correct
                 </button>
             </div>
@@ -67,11 +69,16 @@
 
 
 
+
+
 <?php include_once("../template/commonjs.tpl.php"); ?>
+
     <script>
         var application_root = "<?= APPLICATION_ROOT; ?>";
         $(window).ready(function(){
             loadMapping();
+            loadButtonActions();
         });
     </script>
+
 <?php include_once("../template/footer.tpl.php"); ?>

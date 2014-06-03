@@ -1,4 +1,9 @@
 
+
+/**
+ *    Updates the navbar, setting the currently active
+ *    section based on the pages URL.
+ */
 function updateActiveNavbar(){
 
   var url = window.location.pathname;
@@ -16,6 +21,9 @@ function updateActiveNavbar(){
 
 
 
+/**
+ * strips the last slash of a given string
+ */
 function stripTrailingSlash(str) {
   if(str.substr(-1) == '/') {
     return str.substr(0, str.length - 1);
