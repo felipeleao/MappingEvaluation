@@ -60,6 +60,7 @@
 
     $arr = array(
             'synset'=>array(
+                        'id'=>$result_synset[id],
                         'words'=>$result_synset[words],
                         'gloss'=>$result_synset[gloss]
                     ),
