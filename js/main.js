@@ -92,6 +92,7 @@ function sendEvaluation($eval){
         cache: false,
         success:function(data){
             //if successfuly saved the evaluation, loads another mapping
+            console.log(data);
             loadMapping();
             messages.hidePleaseWait();
 
