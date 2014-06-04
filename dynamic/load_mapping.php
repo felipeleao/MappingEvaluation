@@ -9,6 +9,15 @@
                     or die("MySQL: It wasn't possible to connect to th Database [".SGBD_SERVER.":".SGBD_PORT."].");
     mysql_select_db(SGBD_SCHEMA, $connection) or die("MySQL: It wasn't possible to open the schema [".SGBD_SCHEMA."].");
 
+
+
+    //Returned array (transformed to JSON)
+    $arr = array();
+
+
+
+
+
     //======================================================================
     //Retrieve the next mapping that should be evaluated by the user.
     //======================================================================
@@ -30,7 +39,42 @@
 
 
     $query_synset = mysql_query($sql_synset);
-    $result_synset = mysql_fetch_assoc($query_synset);
+
+    $num_result_synset = mysql_num_rows($query_synset);
+    if($num_result_synset > 0){
+        $result_synset = mysql_fetch_assoc($query_synset);
+
+        $arr['noMoreEvaluations'] = false;
+        $arr['synset'] = array(
+                            'id'=>$result_synset[id],
+                            'words'=>$result_synset[words],
+                            'gloss'=>$result_synset[gloss]
+                        );
+
+        //======================================================================
+        //Retrieve the semantic types related to the synset
+        //======================================================================
+        $sql_semtypes = "select st.name as 'name', st.definition as 'definition' from semantic_types st ".
+                        "inner join synset_has_semtype sst on st.id = sst.id_semtype ".
+                        "inner join synsets s on s.id = sst.id_synset WHERE s.id = ".$result_synset[id].";";
+
+        $query_semtypes = mysql_query($sql_semtypes);
+
+        //build an array with all semantic types related to the synset
+        $semtypes_array = array();
+        while ($row = mysql_fetch_assoc($query_semtypes)) {
+            $semtypes_array[$row[name]] = $row[definition];
+        }
+
+        //Add to returnable array
+        $arr['semtypes'] = $semtypes_array;
+
+
+    }else{
+        $arr['noMoreEvaluations'] = true;
+    }
+
+
 
 
     //======================================================================
@@ -47,6 +91,8 @@
         $total_evaluated = $result_total_evaluated[total];
     }
 
+    $arr['synsetsEvaluated']  = $total_evaluated;
+
 
     //======================================================================
     //Retrieve the total of mappings that must be conducted (simply the number of synsets)
@@ -57,45 +103,13 @@
     $result_total = mysql_fetch_assoc($query_total);
 
 
-    //======================================================================
-    //Retrieve the semantic types related to the synset
-    //======================================================================
-    $sql_semtypes = "select st.name as 'name', st.definition as 'definition' from semantic_types st ".
-                    "inner join synset_has_semtype sst on st.id = sst.id_semtype ".
-                    "inner join synsets s on s.id = sst.id_synset WHERE s.id = ".$result_synset[id].";";
 
-    $query_semtypes = mysql_query($sql_semtypes);
-
-    //build an array with all semantic types related to the synset
-    $semtypes_array = array();
-    while ($row = mysql_fetch_assoc($query_semtypes)) {
-        $semtypes_array[$row[name]] = $row[definition];
-    }
-
+    $arr['totalSynsets']      = $result_total[total];
 
 
     //======================================================================
-    // Build array that will be ocnverted into JSON
+    // Build the output as JSON
     //======================================================================
-
-    $num_result_synset = mysql_num_rows($query_synset);
-    if($num_result_synset > 0){
-        $is_evaluation_over = false;
-    }else{
-        $is_evaluation_over = true;
-    }
-
-
-    $arr = array(
-            'synset'=>array(
-                        'id'=>$result_synset[id],
-                        'words'=>$result_synset[words],
-                        'gloss'=>$result_synset[gloss]
-                    ),
-            'semtypes'=>$semtypes_array,
-            'synsetsEvaluated'=>$total_evaluated,
-            'totalSynsets'=>$result_total[total],
-            'noMoreEvaluations'=>$is_evaluation_over);
 
     //outputs the array as JSON
     echo json_encode($arr);

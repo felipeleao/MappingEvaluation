@@ -65,7 +65,7 @@ function loadMapping(){
 
         },
         error: function(){
-            alert("Error while trying to load mapping. \nPelase, reload the page and try again.");
+            messages.showError("Error while trying to load mapping. \nPelase, reload the page and try again.");
         }
     });
 }
@@ -92,7 +92,6 @@ function sendEvaluation($eval){
         cache: false,
         success:function(data){
             //if successfuly saved the evaluation, loads another mapping
-            console.log(data);
             loadMapping();
             messages.hidePleaseWait();
 
@@ -115,7 +114,7 @@ function sendEvaluation($eval){
 function finishEvaluation(){
     var finishMessage =
             "<div class=\"jumbotron\">"+
-                "<h1><span class=\"text-success\"><strong>You did it!</strong></span></h1>"+
+                "<h1><span class=\"text-success\"><strong>We're done! :)</strong></span></h1>"+
                 "<p>There are no more mappings for you to evaluate. Thank you very much for your participation.</p>"+
             "</div>";
     $('#main_content').html(finishMessage);

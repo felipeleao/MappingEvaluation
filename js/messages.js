@@ -29,7 +29,7 @@ messages = messages || (function () {
                                 '<div class="modal-content">'+
                                     '<div class="modal-header">'+
                                         '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>'+
-                                        '<h3 class="modal-title" id="modaltitle">Ops! bumped into an error...</h3>'+
+                                        '<h3 class="modal-title" id="modaltitle"><span style="color:#f04124;" class="danger glyphicon glyphicon-ban-circle"></span>&nbsp;&nbsp;Whops! bumped into an error...</h3>'+
                                     '</div>'+
                                     '<div class="modal-body" id="modalbody">'+
                                         '<p id="modalmessage">';
