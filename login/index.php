@@ -4,7 +4,7 @@
   //If it comes from the request for LOGOUT, destroy session
   $referrer = $_SERVER['REQUEST_URI'];
   if (SITE_URL.$referrer == APPLICATION_ROOT.'/logout/') {
-    include("./security.php"); // includes the security methods
+    include("../login/security.php"); // includes the security methods
     expelVisitor();
 
   }
