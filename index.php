@@ -52,7 +52,14 @@
         </div>
 
         <p>Sometimes more than one Semantic type will be related to the synset. When this happens you have to evaluate the mapping as a whole, meaning that you must observe if indeed both Semantic Types can be related to the synset. Once Synset and Semantic Type are analyzed please tell us if the mapping is correct or wrong by clicking on the correpondent button. Once clicked, your answer will be saved and a new mapping will be shown for you to evaluate.</p>
-        <p>Please, click the button below to begin.</p>
+
+        <div class="bs-callout bs-callout-warning">
+          <h4 class="text-warning"><strong>Keep in mind...</strong></h4>
+          <p>There are only 20 Semantic Types to describe nouns, so even if the one selected for the mapping can't describe the synset precisely, consider if it fits the synset closely enough.</p>
+          <p><strong>Thank you very much in advance!&nbsp;&nbsp;&nbsp;:)</strong></p>
+        </div>
+
+        <h4 class="text-success"><strong>Click the button below to begin.</strong></h4>
 
         <div class="text-center">
           <a class="btn btn-success btn-lg" href="<?= APPLICATION_ROOT; ?>/evaluate">
@@ -60,12 +67,15 @@
           </a>
         </div>
 
+
+
+        <!--
         <div class="bs-callout bs-callout-danger">
           <h4 class="text-danger"><strong>We won't be able to use partial answers!</strong></h4>
           <p>Please, understand that we won't be able to use partial answers, so your participation will only be useful to us if you evaluate all the mappings shown. If you have ever conducted an academic research, you can understand how difficult it is to find specialists and that they are not allways willing to help, so...</p>
           <p><strong>Thank you very much in advance!&nbsp;&nbsp;&nbsp;:)</strong></p>
         </div>
-
+        -->
 
 
         <div class="clearfix"></div>

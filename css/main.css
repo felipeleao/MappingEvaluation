@@ -41,6 +41,11 @@ html, body {
     border-left: 3px solid #eee;
 }
 
+.bs-callout-warning {
+    background-color: #fcf8f2;
+    border-color: #f0ad4e;
+}
+
 .bs-callout-danger {
     background-color: #fdf7f7;
     border-color: #d9534f;
