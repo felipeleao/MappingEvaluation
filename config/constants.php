@@ -11,6 +11,13 @@ define("SGBD_SCHEMA", "mapping_evaluation");
 
 
 
+//Parametros de conexao para o Hostinger
+// define("SGBD_SERVER", "mysql.hostinger.com.br");
+// define("SGBD_PORT", "3306");
+// define("SGBD_USER", "u689825796_eval");
+// define("SGBD_PASSWORD", "evalP@55");
+// define("SGBD_SCHEMA", "u689825796_eval");
+
 
 //-----------------------------------------------------
 // AVOID EDITING BEYOND THIS POINT
