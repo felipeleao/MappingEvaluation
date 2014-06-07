@@ -1,6 +1,21 @@
 <?php
 
 
+
+//Database connection parameters and credentials
+define("SGBD_SERVER", "localhost");
+define("SGBD_PORT", "3306");
+define("SGBD_USER", "root");
+define("SGBD_PASSWORD", "");
+define("SGBD_SCHEMA", "mapping_evaluation");
+
+
+
+
+//-----------------------------------------------------
+// AVOID EDITING BEYOND THIS POINT
+//-----------------------------------------------------
+
 //General parameters fused throughout the application
 define("SITE_URL", siteURL() );
 define("APPLICATION_ROOT", getApplicationRoot() );
@@ -17,20 +32,6 @@ define("VALIDATE_EVERYTIME", true);
 define("LOGIN_PAGE", APPLICATION_ROOT."/login");
 define("USERS_DB_TABLE", "users");
 
-
-//Database connection cparameters and credentials
-define("SGBD_SERVER", "localhost");
-define("SGBD_PORT", "3306");
-define("SGBD_USER", "root");
-define("SGBD_PASSWORD", "");
-define("SGBD_SCHEMA", "mapping_evaluation");
-
-//Parametros de conexao para o Hostinger
-// define("SGBD_SERVER", "mysql.hostinger.com.br");
-// define("SGBD_PORT", "3306");
-// define("SGBD_USER", "u689825796_eval");
-// define("SGBD_PASSWORD", "evalP@55");
-// define("SGBD_SCHEMA", "u689825796_eval");
 
 
 
