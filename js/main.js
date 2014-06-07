@@ -34,8 +34,9 @@ function loadMapping(){
         data: {},
         cache: false,
         success:function(data){
-            if(data.noMoreEvaluations){
+            if(data.noMoreEvaluations || (parseInt(data.synsetsEvaluated,10)>=parseInt(data.totalSynsets,10))){
                 finishEvaluation();
+
             }else{
                 var synset =
                     "<dt>Words:</dt>"+
@@ -134,12 +135,4 @@ function loadButtonActions(){
     $('#btn_correct').click(function(){
         sendEvaluation(true);
     });
-}
-
-
-/**
-*  submits the user evaluation of the mapping
-*/
-function saveEvaluation($synset, $evaluation){
-
 }

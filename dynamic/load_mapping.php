@@ -80,7 +80,7 @@
     //======================================================================
     //count evaluated synsets
     //======================================================================
-    $sql_total_evaluated = "select count(*) as 'total' from (select * from evaluation e group by e.id_synset) as allregisters;";
+    $sql_total_evaluated = "select count(*) as 'total' from (select * from evaluation e where id_user = '".$_SESSION['usuarioID']."' group by e.id_synset) as allregisters;";
 
     $query_total_evaluated = mysql_query($sql_total_evaluated);
     $result_total_evaluated = mysql_fetch_assoc($query_total_evaluated);
@@ -95,10 +95,10 @@
 
 
     //======================================================================
-    //Retrieve the total of mappings that must be conducted (simply the number of synsets)
+    //Retrieve the total of mappings that must be conducted (specific for user)
     //======================================================================
-    $sql_total = "select count(*) as 'total' from synsets;";
-
+    $sql_total = "select mappings_to_evaluate as 'total' from users where id = '".$_SESSION['usuarioID']."';";
+    
     $query_total = mysql_query($sql_total);
     $result_total = mysql_fetch_assoc($query_total);
 

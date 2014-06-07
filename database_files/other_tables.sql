@@ -4,6 +4,7 @@ CREATE TABLE `users` (
   `user` VARCHAR(255) NOT NULL,
   `password` VARCHAR(255),
   `last_evaluated` INT NOT NULL DEFAULT 0,
+  `mappings_to_evaluate` INT NOT NULL DEFAULT 500,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `login_UNIQUE` (`login` ASC));
 CREATE TABLE `evaluation` (
