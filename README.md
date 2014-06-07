@@ -6,7 +6,7 @@ A PHP web app to help evaluating the mapping of WordNet synsets to Dixon's Seman
 Usage
 ---
 
-![Application Screenshot](https://github.com/felipeleao/MappingEvaluation/images/screenshots/screenshot1.png)
+![Application Screenshot](https://github.com/felipeleao/MappingEvaluation/blob/master/images/screenshots/screenshot1.png)
 
 The usage is pretty straightforward. Once logged the user will be able to access the **Evaluate!** section. The application will show a synset and the semantic type related to it. The user must simply select *correct* or *wrong*, and click the respective button.
 
