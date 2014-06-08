@@ -24,7 +24,7 @@ Then place it inside a webserver prepared for PHP (e.g. apache+php). The webserv
 
 To prepare the database begin by running the script `MappingEvaluation.sql`, placed inside `database_files/`. This will generate the database along with some data. After that run `other_tables.sql` script, inside the sam folder. This second script will generate some other tables related specifically to the web application. The reason why there are two files instead of a simple script is to enable you to generate your own mappings based [SupersenseMapping](https://github.com/felipeleao/SupersenseMapping) application (check the link), which will output a script similar to `MappingEvaluation.sql`. If you choose to do so, don't forget to run `other_tables.sql` afterwards.
 
-With the application inside the webserver and the database created edit the `config/constants.php` file to specify the database connection pparameters right in the begining
+With the application inside the webserver and the database created cpoy the `config/constants_default.php` and rename it to `config/constants.php`, then specify the database connection pparameters right in the begining of the file.
 
 ````php
 //Database connection parameters and credentials
