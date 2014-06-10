@@ -1,4 +1,5 @@
 <?php
+
     include_once("../config/constants.php");
     include_once("../login/security.php");
 
@@ -26,16 +27,28 @@
     //                 " where s.id = (SELECT (last_evaluated+1) from users u where u.id='".$_SESSION['usuarioID']."');";
 
     //Retrieves a synset not yet ealuated by any user
-    $sql_synset = "select ".
-	                  "s.id as 'id', ".
-	                  "group_concat(w.word SEPARATOR ', ') AS 'words', ".
-	                  "s.gloss AS 'gloss' ".
-                    "FROM synsets s ".
-                    "INNER JOIN words w ON w.id_synset = s.id ".
-                    "WHERE s.id NOT IN ".
-                        "(SELECT id_synset FROM evaluation) ".
+    $sql_synset = "SELECT ".
+                    	"s.id as 'id', ".
+                    	"group_concat(w.word SEPARATOR ', ') AS 'words', ".
+                    	"s.gloss AS 'gloss' ".
+                    "FROM synsets s  INNER JOIN words w ON w.id_synset = s.id ".
+                    "WHERE s.id_supersense = ( ".
+                    	"SELECT ss.id FROM supersenses ss ".
+                    	"INNER JOIN synsets s ON s.id_supersense = ss.id ".
+                    	"WHERE s.id NOT IN ( ".
+                    		"SELECT e.id_synset FROM evaluation e GROUP BY e.id_synset ".
+                    	") ".
+                    	"GROUP BY ss.id ".
+                    	"ORDER BY ss.id ".
+                    	"LIMIT 1 ".
+                    ") ".
+                    "AND s.id NOT IN ( ".
+                		"SELECT e.id_synset FROM evaluation e GROUP BY e.id_synset ".
+                	") ".
                     "GROUP BY s.id ".
-                    "LIMIT 1; ";
+                    "ORDER BY RAND() ".
+                    "LIMIT 1;";
+
 
 
     $query_synset = mysql_query($sql_synset);
@@ -98,7 +111,7 @@
     //Retrieve the total of mappings that must be conducted (specific for user)
     //======================================================================
     $sql_total = "select mappings_to_evaluate as 'total' from users where id = '".$_SESSION['usuarioID']."';";
-    
+
     $query_total = mysql_query($sql_total);
     $result_total = mysql_fetch_assoc($query_total);
 
