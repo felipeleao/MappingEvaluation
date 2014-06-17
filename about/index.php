@@ -10,7 +10,7 @@
 
         <h1 class="page-header">About the Research</h1>
 
-        <p>The <strong>Mapping Evaluation</strong> intends to pose as a helper application on the evaluation step of the case study being currently conducted as a part of my Master's Research in Information Systems, being developed at <a href="http://www.unirio.br/">UNIRIO</a> (Federal University of the State of Rio de Janeiro). The main goal is to propose an automatic method to learn well-founded conceptual models through Natural Language Processing (NLP). A big part of this method is the mapping of WordNet synsets (along with their correspondent Supersenses) to Semantic Types.</p>
+        <p>The <strong>Mapping Evaluation</strong> intends to pose as a helper application on the evaluation step of the case study being currently conducted as a part of my Master's Research in Information Systems, developed at <a href="http://www.unirio.br/">UNIRIO</a> (Federal University of the State of Rio de Janeiro). The main goal is to propose an automatic method to learn well-founded conceptual models through Natural Language Processing (NLP). A big part of this method is the mapping of WordNet synsets (along with their correspondent Supersenses) to Semantic Types.</p>
         <p>Out of the context of this research the mapping can be really useful by itself, since it expands the semantics of Wordnet. Considering the amount of projects around the world that use WordNet as a lexical/semantical database, we believe that many other researches can benefit from the relation of synsets to Semantic Types, which expose some attributes not currently available on WordNet.</p>
 
         <h2 class="page-header">WordNet</h2>
@@ -23,7 +23,8 @@
         <h2 class="page-header">Semantic Types</h2>
 
         <p>Throughout this work, when using the term <em>Semantic Type</em>, we are referring to the classes participating on the semantic approach to english grammar developed by R.M.W Dixon, published by Oxford press in 2005 (1st ed.) under the title of <a href="http://global.oup.com/academic/product/a-semantic-approach-to-english-grammar-9780199283071;jsessionid=C007C781E607BDAF7273338D404E38E3?cc=br&lang=en&#">A Semantic Approach to English Grammar</a>.</p>
-        <p>In its work Dixon describes the Semantic Types as a way of organizing the thousands of terms of a language under groups sharing a meaning element. While word classes (e.g. nouns, verbs, adjectives, etc.) are simply a grammatical way of organization, Semantic Types aim at grouping them semantically, helping to express a common meaning among all members. Even though Dixon focus on the english Semantic Types, such classes can be identified in any given language.</p>
+        <p>In its work Dixon describes the Semantic Types as a way of organizing the thousands of terms of a language under groups sharing a meaning element. While word classes (e.g. nouns, verbs, adjectives, etc.) are simply a grammatical way of organization, Semantic Types aim at grouping them semantically, helping to express a common meaning among all members. Even though Dixon focus on the english Semantic Types, such classes can be identified in any given language. Picture 1 enumerates the 20 Semantic Types for nouns. Only "abstract Refenrece" and "Concrete reference" nodes cannot be instantiated, even though all ther subtypes can.</p>
+        <p class="text-center"><img src="<?= IMAGES_ROOT ?>/semantic_types.png" /><br/> Picture 1: Noun Semantic Types</p>
 
         <h2 class="page-header">About the author</h2>
 
