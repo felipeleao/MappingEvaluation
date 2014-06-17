@@ -12,7 +12,7 @@
 
         <div class="alert alert-info">
           <p>First of all, <strong>THANK YOU! =)</strong></p>
-          <p>Your help is essential for the success of this work, and we're no just saying it! If you wish to understand a little bit better what this research aims to achieve and how it can impact on computational linguistics and conceptual modelling fields, please refer to the <a href="<?= APPLICATION_ROOT ?>/about">about section</a>.</p>
+          <p>Your help is essential for the success of this work, and we're not just saying it! If you wish to understand a little bit better what this research aims to achieve and how it can impact on computational linguistics and conceptual modelling fields, please refer to the <a href="<?= APPLICATION_ROOT ?>/about">about section</a>.</p>
         </div>
 
         <p>When you click on the <strong>Begin Evaluation</strong> button in the end of this page you'll be redirected to the <em>evaluate</em> section of this application. Once the evaluation begins you'll be able to interrupt it at any time you wish without losing the work done up to that point. When you log back with your username the system will take you to the point where you have stopped.</p>
