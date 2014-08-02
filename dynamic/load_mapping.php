@@ -36,15 +36,21 @@
                     	"SELECT ss.id FROM supersenses ss ".
                     	"INNER JOIN synsets s ON s.id_supersense = ss.id ".
                     	"WHERE s.id NOT IN ( ".
-                    		"SELECT e.id_synset FROM evaluation e GROUP BY e.id_synset ".
+                    		"SELECT e.id_synset FROM evaluation2 e GROUP BY e.id_synset ".
                     	") ".
+                        "AND s.id IN ( ".
+                            "SELECT shs.id_synset FROM synset_has_semtype shs where isRealMapping = false ".
+                        ") ".
                     	"GROUP BY ss.id ".
                     	"ORDER BY ss.id ".
                     	"LIMIT 1 ".
                     ") ".
                     "AND s.id NOT IN ( ".
-                		"SELECT e.id_synset FROM evaluation e GROUP BY e.id_synset ".
+                		"SELECT e.id_synset FROM evaluation2 e GROUP BY e.id_synset ".
                 	") ".
+                    "AND s.id IN ( ".
+                        "SELECT shs.id_synset FROM synset_has_semtype shs where isRealMapping = false ".
+                    ") ".
                     "GROUP BY s.id ".
                     "ORDER BY RAND() ".
                     "LIMIT 1;";
@@ -93,7 +99,7 @@
     //======================================================================
     //count evaluated synsets
     //======================================================================
-    $sql_total_evaluated = "select count(*) as 'total' from (select * from evaluation e where id_user = '".$_SESSION['usuarioID']."' group by e.id_synset) as allregisters;";
+    $sql_total_evaluated = "select count(*) as 'total' from (select * from evaluation2 e where id_user = '".$_SESSION['usuarioID']."' group by e.id_synset) as allregisters;";
 
     $query_total_evaluated = mysql_query($sql_total_evaluated);
     $result_total_evaluated = mysql_fetch_assoc($query_total_evaluated);

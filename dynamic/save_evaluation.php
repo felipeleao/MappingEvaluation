@@ -15,7 +15,7 @@
         mysql_select_db(SGBD_SCHEMA, $connection) or die("MySQL: It wasn't possible to open the schema [".SGBD_SCHEMA."].");
 
 
-        $sql_insert_evaluation = "insert into evaluation (id_user, id_synset, correct) values (".$_SESSION['usuarioID'].",".$_POST['synset'].",".$_POST['evaluation'].");";
+        $sql_insert_evaluation = "insert into evaluation2 (id_user, id_synset, correct) values (".$_SESSION['usuarioID'].",".$_POST['synset'].",".$_POST['evaluation'].");";
         $query_insert_evaluation = mysql_query($sql_insert_evaluation);// or die (mysql_error("error"));
         if($query_insert_evaluation){
             $mensagem = "sucesso";
